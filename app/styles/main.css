@@ -1,0 +1,145 @@
+html, body { margin: 20px; }
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+/* override bootstrap */
+.navbar { margin-bottom: 0px; }
+.carousel { height: 24em; }
+.carousel-indicators li { border-color: black; }
+.carousel-indicators .active { background-color: black; }
+
+.carousel-inner > .item { height: 20em; text-align: center;}
+.icon-large { font-size: 15em; }
+
+.about-left { float:left; width:100%; vertical-align:middle; }
+.about-right { float:right; }
+.about-img { padding-left:25%; }
+.center-text { text-align:center; }
+
+/* table display properties */
+tr.offer-instance:hover { cursor: pointer; }
+div.list-group { height: 40em; overflow-y: scroll; }
+.list-group input { width:100%; }
+img.portal { width: 60px; }
+
+/* Featurettes ------------------------- */
+.featurette-divider { margin: 80px 0; }
+.featurette { overflow: hidden; }
+.featurette-image { margin-top: -120px; }
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left { margin-right: 40px; }
+.featurette-image.pull-right { margin-left: 40px; }
+
+/* Thin out the marketing headings */
+.featurette-heading { font-size: 50px; font-weight: 300; line-height: 1; letter-spacing: -1px; }
+
+.muted { color: #999999 }
+
+li.list-item { list-style:none; }
+.list-item.active { background-color:steelblue; }
+.list-item.active > a { color:white; }
+
+.stores-loading { text-align:center; margin:20px; }
+.offers-loading { text-align:center; margin-top:20px; }
+.fa-spin { animation: fa-spin 2s infinite linear; -webkit-animation: fa-spin 2s infinite linear; }
+.fa-pulse { animation: fa-spin 1s infinite steps(8); -webkit-animation: fa-spin 1s infinite steps(8); }
+@-webkit-keyframes fa-spin { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }  100% { -webkit-transform: rotate(359deg); transform: rotate(359deg); } }
+@keyframes fa-spin { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }  100% { -webkit-transform: rotate(359deg); transform: rotate(359deg); } }
+
+/* for the D3 plot styling */
+div.tooltip { border:2px solid black; border-radius:8px; font:12px sans-serif; height:40px; position:absolute; padding: 5px; text-align:center; width: 200px; }
+.axis path,
+.axis line { fill: none; stroke: black; shape-rendering: crispEdges; }
+.axis text { font-family: sans-serif; font-size:14px; }
+.label text { font-size:16px; }
+.svg-container { display:inline-block; position:relative; width:100%; padding-bottom:100%; vertical-align:top; overflow:hidden; }
+
+.pointer { transform:rotate(0deg); }
+
+@media (max-width: 767px) { 
+  .pointer { transform:rotate(90deg); }
+}

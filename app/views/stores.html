@@ -1,0 +1,25 @@
+<div ng-hide="loading" class="col-xs-12 col-sm-3 list-group">
+	<form>
+		<input ng-model="storeQuery" type="text" placeholder="Filter By" autofocus>
+	</form>
+	<div vs-repeat>
+	    <div ng-repeat="store in storeList | filter:storeQuery | orderBy: 'name'">
+	    	<li class="list-item" ng-class="{'active': store.key == key}">
+	        <a ng-click="updateStoreView('{{store.key}}')">
+	        {{store.name}}&nbsp;({{store.count}})
+	        </a>
+        </li>
+	    </div>
+	</div>
+</div>
+<div ng-show="loading" class="col-xs-12 col-sm-3 stores-loading">
+	<div ng-show="error">
+		<i class="fa fa-3x fa-warning"></i>
+		<p>There was an error, please try refreshing the page.</p>		
+	</div>
+	<div ng-hide="error">
+		<i class="fa fa-3x fa-spinner fa-spin fa-pulse"></i>
+		<p>Loading stores, please wait.</p>
+	</div>
+</div>
+<div current-store-data store-key="key"></div>

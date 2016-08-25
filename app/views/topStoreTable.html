@@ -1,0 +1,25 @@
+<div ng-show="topDealsLoaded" class="featurette">
+	<h2 class="featurette-heading" style="text-align:center">Top Offers:</h2>
+    
+    <h4 style="text-align:center">{{storeType}}</h4>
+    <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="top-table display table table-striped table-bordered" width="100%">
+	<thead>
+	    <tr>
+	       <th>Store</th>
+           <th>Equivalent Percentage</th>
+	    </tr>
+	</thead>
+	<tbody>
+        <tr ng-repeat="deal in data">
+            <td>
+                <a ng-href="/#/stores/{{storeType}}/{{deal.portalStoreKey | parseStoreName}}">
+                {{deal.name}}
+                </a>
+            </td>
+            <td>
+                {{deal.topStoreRating  | number : 2}}%
+            </td>
+        </tr>
+	</tbody>
+</table>
+</div>

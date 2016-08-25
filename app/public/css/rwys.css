@@ -1,0 +1,13 @@
+#jumbotron-funnel { width: 50% }
+
+
+/* override bootstrap datatable */
+.pull-right { float: none!important; }
+.dataTables_wrapper .dataTables_paginate { float:none; text-align:center; }
+table.table thead .sorting:after, table.table thead .sorting_asc:after, table.table thead .sorting_desc:after, table.table thead .sorting_asc_disabled:after, table.table thead .sorting_desc_disabled:after { float: right; font-family: 'Glyphicons Halflings'; }
+tr.offerInstance:hover { cursor: pointer; }
+
+/* override bootstrap list-group-item to display properly with ember-list-view */
+.list-group-item { margin-bottom: -42px; }
+a.list-group-item:focus, a.list-group-item:hover { cursor: pointer; }
+

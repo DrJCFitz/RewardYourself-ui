@@ -1,0 +1,43 @@
+<div ng-show="dataLoaded" class="featurette col-xs-12 col-sm-8">
+    <h4 class="offers-loading">Listing of current discounts by portal: {{data[0].name}}</h4>
+    <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="display" width="100%">
+    <thead>
+        <tr>
+            <th>Portal</th>
+            <th>Reward</th>
+            <th>Equivalent Percentage</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr class="offer-instance" ng-repeat="offer in data | filter:{dateCreated: date}">
+                <td>
+                    <img class="portal" ng-src="images/{{offer.portalStoreKey | parsePortalName}}.png">
+                </td>
+                <td>
+                    {{offer.reward.value}}{{(offer.reward.unit === offer.reward.rate) ? offer.reward.unit : '&nbsp;'+offer.reward.unit + offer.reward.rate}}
+                </td>
+                <td>
+                    {{offer.reward | calcPercentReturn | number : 2}}%
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div merchant-history data="data" end-date="date"></div>
+</div>
+<div ng-show="loading" class="featurette col-xs-12 col-sm-8 offers-loading">
+    <div ng-show="error">
+        <i class="fa fa-3x fa-warning"></i>
+        <p>There was an error, please try refreshing the page.</p>      
+    </div>
+    <div ng-hide="error">
+        <i class="fa fa-3x fa-spinner fa-spin fa-pulse"></i>
+        <p>Loading offers, please wait.</p>
+    </div>
+</div>
+<div ng-hide="(loading || dataLoaded)" class="featurette col-xs-12 col-sm-8">
+    <i class="fa fa-hand-o-left fa-3x pointer"></i>
+    <h2 style="display:inline;">Start Here</h2>
+    <h4>Scroll the list or search for a store of interest</h4>
+</div>
+
